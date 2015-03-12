@@ -1,0 +1,332 @@
+<html>
+    <head>
+    	<title>MyApp</title>
+      <meta charset=utf-8 />
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      	<link type="text/css" rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet"  href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" /> 
+        <link rel="stylesheet" href="jquery.mobile.datepicker.css" />
+        <link rel="stylesheet" href="jquery.mobile.datepicker.theme.css" />
+         -->
+        
+    </head>
+    <body>
+    <div ><a href=#! class="notification">New Post Added</a></div>
+		<nav>
+			<div class="nav-wrapper z-depth-1">
+				<div class="container">
+					<div class="col s12 m12 l12">
+				        <a href="#!" class="brand-logo"><img src="images/name2.png"></a>
+                <a href="#!" id="wrapped-menu" class="wrap-menu mdi-navigation-menu waves-effect "></a>
+				        <ul class="side-nav">
+				          	<!-- <li><a href="#"><i class="mdi-action-perm-contact-cal left"></i>Contact</a></li> -->
+				          	<li class="active"><a href="#"><i class="mdi-action-home left"></i>Home</a></li>
+				          	<li><a href="search.html"><i class="mdi-action-search left"></i>Search</a></li>
+				          	<li><a href="profile.html"><i class="mdi-action-face-unlock left"></i>Profile</a></li>
+				          	<li><a href="event.html"><i class="mdi-action-view-module left"></i>Event</a></li>
+				        </ul>
+                <!-- <div class="wrap-menu">
+                  <input class="menu-btn" id="menu-id" type="button" name="menu" value="&#9776; Menu">
+                </div> -->
+
+		      </div>
+				</div>
+		  	</div>
+		</nav>
+
+  <div class="main-container clearfix">
+    <div class="container">
+      <div class="row">
+        <!-- Sign In starts -->
+        <div class="col s12 m12 l12 ">
+          <div class="widget-item z-depth-1">
+            <b>Sign In</b>
+            <div>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="mdi-action-account-circle prefix"></i>
+                      <input id="username" type="text" class="validate">
+                      <label for="username">Username</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <i class="mdi-action-https prefix"></i>
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  	<button id="login2" class="btn waves-effect waves-light" type="submit">Login<i class="mdi-action-lock-open right"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sign in ends -->
+
+        <!-- Home page starts -->
+        <div class="col s12 m12 l12">
+          <div class="post-wrapper post-index z-depth-1">
+            <div class="post-container">
+              <div class="post-header">
+                <div class="profile-dp"><img src=""></div>
+                <div class="profile-name">
+                  <h3 class="user-name">Foram</h3><span class="friends-name">xyz<i class="mdi-social-group right"></i></span>
+                </div>
+                <div class="favourites"><div><a href="#!" class="star">&#9734;</a></div><div class="date"></div></div>
+              </div>
+              <div class="post-content-area">
+                <div class="post-content">Welcome to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis, tenetur, perferendis eius impedit labore vitae tempora consectetur corporus dolores fugiat molestiae nihil facilis provident necessitatibus sit architecto voluptas ut cupididate. Lorem ipsum dolor sit amet, consectetur.
+                </div>
+                <div class="post-options"> 
+                  <a href="#!" id="Like-option" class="waves-effect likebtn"><img src="images/like.png"><img src="images/liked2.png" style="display:none"><!-- <i class="mdi-action-thumb-up left">Like</i> -->Like</a>
+                  <a href="#!" id="Comment-option" class="waves-effect comment-option"><i class=" mdi-communication-chat left">Comment</i></a>
+                </div>
+                <div class="comments-area">
+                  <div class="comments" id="comments-view"> </div>
+                  <div class="bindings">
+                    <div class="comment-box"><textarea name="comment-textarea" placeholder="Comment here..."></textarea></div>
+                    <a href="#!" class="waves-effect post-comment" id="post-comments">Post</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post-wrapper post-index z-depth-1">
+            <div class="post-container">
+              <div class="post-header">
+                <div class="profile-dp"><img src=""></div>
+                <div class="profile-name">
+                  <h3 class="user-name">Foram</h3><span class="friends-name">xyz<i class="mdi-social-group right"></i></span>
+                </div>
+                <div class="favourites"><div><a href="#!" class="star">&#9734;</a></div><div class="date"></div></div>
+              </div>
+              <div class="post-content-area">
+                <div class="post-content">Welcome to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis, tenetur, perferendis eius impedit labore vitae tempora consectetur corporus dolores fugiat molestiae nihil facilis provident necessitatibus sit architecto voluptas ut cupididate. Lorem ipsum dolor sit amet, consectetur.
+                </div>
+                <div class="post-options"> 
+                  <a href="#!" id="Like-option" class="waves-effect likebtn"><img src="images/like.png"><img src="images/liked2.png" style="display:none"><!-- <i class="mdi-action-thumb-up left">Like</i> -->Like</a>
+                  <a href="#!" id="Comment-option" class="waves-effect comment-option"><i class=" mdi-communication-chat left">Comment</i></a>
+                </div>
+                <div class="comments-area">
+                  <div class="comments" id="comments-view"> </div>
+                  <div class="bindings">
+                    <div class="comment-box"><textarea name="comment-textarea" placeholder="Comment here..."></textarea></div>
+                    <a href="#!" class="waves-effect post-comment" id="post-comments">Post</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post-wrapper post-index z-depth-1">
+            <div class="post-container">
+              <div class="post-header">
+                <div class="profile-dp"><img src=""></div>
+                <div class="profile-name">
+                  <h3 class="user-name">Foram</h3><span class="friends-name">xyz<i class="mdi-social-group right"></i></span>
+                </div>
+                <div class="favourites"><div><a href="#!" class="star">&#9734;</a></div><div class="date"></div></div>
+              </div>
+              <div class="post-content-area">
+                <div class="post-content">Welcome to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis, tenetur, perferendis eius impedit labore vitae tempora consectetur corporus dolores fugiat molestiae nihil facilis provident necessitatibus sit architecto voluptas ut cupididate. Lorem ipsum dolor sit amet, consectetur.
+                </div>
+                <div class="post-options"> 
+                  <a href="#!" id="Like-option" class="waves-effect likebtn"><img src="images/like.png"><img src="images/liked2.png" style="display:none"><!-- <i class="mdi-action-thumb-up left">Like</i> -->Like</a>
+                  <a href="#!" id="Comment-option" class="waves-effect comment-option"><i class=" mdi-communication-chat left">Comment</i></a>
+                </div>
+                <div class="comments-area">
+                  <div class="comments" id="comments-view"> </div>
+                  <div class="bindings">
+                    <div class="comment-box"><textarea name="comment-textarea" placeholder="Comment here..."></textarea></div>
+                    <a href="#!" class="waves-effect post-comment" id="post-comments">Post</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Home page ends -->
+
+        <!-- Search page starts -->
+        <!-- <div class="col s12 m12 l12 ">
+          <div class="ui-block-b">
+            <div class="ui-content">
+              <input type="text" class="date-input" data-inline="false" data-role="date">
+              <input type="text" class="date-input-inline" data-inline="true" data-role="date">
+            </div>
+          </div>
+        </div> -->
+        <!-- Search page ends -->
+
+        <!-- Profile starts -->
+
+        <!-- Profile page ends -->
+      </div>
+    </div>
+  </div>
+  <div class="overlay"> </div>
+		<!-- <footer>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">About Me</a>
+            </div>
+          </div>
+        </footer> -->
+
+    	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="js/materialize.min.js"></script>
+        
+      	<script type="text/javascript">
+      		$(document).ready(function(){
+		      // $('.materialboxed').materialbox();
+          
+		      // $('.side-nav').hide();
+          var user="123";
+          var pass="123";
+          var username=$("#username");
+          var password=$("#password");
+          var d= new Date();
+          var date=d.toDateString();
+          var hours=d.getHours();
+          var minutes=d.getMinutes();
+          var fulldate= date + " " + hours +":"+ minutes;
+          var load_post;
+
+          $('.date').html(fulldate);
+          $('.bindings').hide();
+
+          // if ($('.notification').style.display== "none")
+          // {
+          // $('.notification').fadeIn(5000);
+          // $('.notification').fadeOut(5000);
+          // }
+
+          // var x =function () {
+          //     setTimeout(function() {   //calls click event after a certain time
+          //     x.element.click(function(){
+          //     $('.notification').fadeIn(5000);
+          //     $('.notification').fadeOut(5000);
+          //     x();
+          //    });
+          // }, 100);}
+
+          // setTimeout(function() 
+          // { f(); }, 10000);
+
+          // var f=function()
+          // {
+          //  setTimeout(function() 
+          //   {
+          //     $('.notification').fadeIn();
+          //     $('.notification').fadeOut(4000);
+          //     // f();
+          //   });
+          // }
+                    // $('.comments-area').hide();
+          
+		      $('#login2').click( function (e) 
+		      {
+            
+            if (($("#username").val()==user) && ($("#password").val()==pass))
+            {
+  		      	$('.widget-item').hide();
+  		      	e.preventDefault();
+              $('.side-nav').css("visibility","visible");
+              $('#wrapped-menu').css("visibility","visible");
+              $('user-name').html(username);
+              $('.post-wrapper').css("display","block");
+            }
+            else 
+            {
+              alert("username password does not match.");
+            }
+		      });
+
+          $('#wrapped-menu').click(function ()
+          {
+            $('.side-nav').slideToggle();
+          });
+
+          $('.star').click(function() 
+          {
+            $(this).toggleClass('colored');
+          });
+
+          $('.likebtn').click(function()
+          {
+            // $(this).find('img').attr('src','images/liked2.png');
+            $(this).find('img').toggle();
+          });
+
+          $('.comment-option').click(function()
+          {
+            $('textarea').val("");
+            // $('.bindings').toggle();
+            // console.log($(this).parent());
+            $('.bindings').hide();
+            // $(this).parent().siblings('.comments-area').css("display","block");
+            $(this).parent().siblings().children('.bindings').show();
+            // $(this).parent().siblings().children('textarea').show();
+            // $(this).parent().siblings().children('textarea').val("");
+            // $(this).parent().siblings().children('#post-comment').show();
+            // $('textarea').toggle();
+            // $('#post-comment').toggle();
+          });
+
+          $('.post-comment').click(function()
+          {
+            load_post= $(this).siblings().children('textarea').val();
+            // alert("hi");
+            $(this).parent('.bindings').hide();
+            // alert("hi");
+            // $('textarea').hide();
+            // $('#post-comment').hide();
+            // console.log(load_post);
+            if (load_post !="")
+            {
+              $(this).parent().siblings('#comments-view').append('<p class="post-para">'+ load_post +'</p>');
+            }
+            // $('textarea').disabled = true;
+          });
+
+          // $('.post-wrapper').css("display","block");
+
+          // setInterval(function()
+          // { 
+          //   toast('New Post Added', 7000).click(function()
+          //   {
+          //     alert("hi");
+          //   }) 
+
+          // }, 10000);
+
+          setInterval(function()
+          { 
+            $('.notification').show(); 
+            // $('.notification').slideUp(500);
+            $('.notification').fadeOut(3000,"easeOutCubic");  
+          }, 50000);
+
+          $('.notification').click(function()
+          {
+            // alert("hi");
+            $('html,body').animate({scrollTop:0},800);
+            return false;
+          });
+
+		    });
+
+		    
+
+        // $('#toast-container').click(function()
+        //   {
+        //     alert("hi");
+        //     $('html,body').animate({scrollTop:0},1000);
+        //     return false;
+        //   });
+
+      	</script>
+    </body>
+</html>

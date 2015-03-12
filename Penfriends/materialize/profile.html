@@ -1,0 +1,316 @@
+<html>
+    <head>
+    	<title>MyApp</title>
+      <meta charset=utf-8 />
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"> -->
+      	<link type="text/css" rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="jquery.cropit.js"></script>
+        <script src="cropbox.js"></script> 
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <!-- <link rel="stylesheet"  href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" />  -->
+         
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper z-depth-1">
+          <div class="container">
+            <div class="col s12 m12 l12">
+                  <a href="#!" class="brand-logo"><img src="images/name2.png"></a>
+                  <a href="#!" id="wrapped-menu" class="wrap-menu mdi-navigation-menu waves-effect "></a>
+                  <ul class="side-nav">
+                      <!-- <li><a href="#"><i class="mdi-action-perm-contact-cal left"></i>Contact</a></li> -->
+                      <li><a href="login.html"><i class="mdi-action-home left"></i>Home</a></li>
+                      <li><a href="search.html"><i class="mdi-action-search left"></i>Search</a></li>
+                      <li class="active"><a href="#"><i class="mdi-action-face-unlock left"></i>Profile</a></li>
+                      <li><a href="event.html"><i class="mdi-action-view-module left"></i>Event</a></li>
+                  </ul>
+                  <!-- <div class="wrap-menu">
+                    <input class="menu-btn" id="menu-id" type="button" name="menu" value="&#9776; Menu">
+                  </div> -->
+
+            </div>
+          </div>
+          </div>
+      </nav>
+
+      <div class="main-container clearfix adjustment">
+        <div class="container">
+          <div class="row">
+
+            <!-- Profile page starts -->
+            <div class="col s12 m12 l12 cover-pic ">
+
+              <!-- Image editor -->
+              <div class="image-editor">
+                <input type="file" class="cropit-image-input cover-image-input">
+                <a class="waves-effect waves-light btn image_upload">Change</a>
+                <!-- <button class="image_upload">Change</button> -->
+                <!-- <p class="range-field"> -->
+                  <input type="range" class="cropit-image-zoom-input" min="0" max="100"> 
+                <!-- </p> -->
+                <a class="waves-effect waves-light btn export" id="coverSave">Save</a>
+                <!-- <button class="export">Save</button> -->
+                <div class="cropit-image-preview-container">
+                  <div class="cropit-image-preview"></div>
+                </div>                
+              </div>
+            </div>
+            <!-- end of image editor -->
+
+            <div class="col s12 m12 l12 profile-container ">
+             
+              <div class="profile-pic">
+                <img src="" class="profile-image">
+                <input type="file" class="cropit-image-input profile-image-input">
+                <i class="mdi-editor-mode-edit prefix profile-upload"></i>
+              </div>
+              
+              <!-- Progress bar  -->
+              <div class="chart" id="graph"></div>
+              <!-- Progress bar ends -->
+
+              <div style="">
+
+                <!-- Cropbox editor-->
+                <div class="container1">
+                  <div class="imageBox" >
+                      <div class="thumbBox" tyle="display: block"></div>
+                      <div class="spinner" style="display: block">Loading...</div>
+                  </div>
+                  <div class="action">
+                    <a class="waves-effect waves-light btn" id="btnZoomOut">-</a>
+                    <a class="waves-effect waves-light btn" id="btnZoomIn">+</a>
+                    <a class="waves-effect waves-light btn" id="btnCrop">Preview</a>
+                    <a class="waves-effect waves-light btn" id="btnSet">Set</a>
+                  </div>
+                </div>
+                <!-- cropbox editor ends -->
+
+                <!-- Settings part -->
+                <div class="clearfix settings">
+                  <nav class="vertical-nav">
+                    <div class="nav-wrapper">
+                      <ul class="left">
+                        <li><a href="#locate">Location</a></li>
+                        <li><a href="#toggle">Toggle</a></li>
+                        <li><a href="#choose">Choose</a></li>
+                        <li><a href="#setdate">Date</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+
+                  <div class="target-tabs" style="float:right; width:77%;">
+                    <div class="tab1" id="locate">
+                      <script type="text/javascript" src="http://www.webestools.com/google_map_gen.js?lati=19.474313&long=72.829931&zoom=13&width=800&height=450&mapType=normal&map_btn_normal=yes&map_btn_satelite=yes&map_btn_mixte=yes&map_small=yes&marqueur=yes&info_bulle="></script>
+                    </div>
+
+                    <div class="tab2" id="toggle">
+                      <!-- Switch -->
+                      <div class="switch">
+                        <label>
+                          Off
+                          <input type="checkbox">
+                          <span class="lever"></span>
+                          On
+                        </label>
+                      </div>
+                      <!-- Switch end -->
+                    </div>
+
+                    <div class="tab3" id="choose">
+                      <!-- <select placeholder="Choose your option">
+                        <option value="">Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                      </select> -->
+
+                      <input type="text" name="example" list="exampleList">
+                      <datalist id="exampleList">
+                          <option value="A">
+                          <option value="B">
+                          <option value="C">
+                          <option value="D">
+                      </datalist>
+                    </div>
+
+                    <div class="tab4" id="setdate">
+                      <input type="text" class="datepicker">
+                    </div>
+                  </div>
+                </div>
+                <!-- Settings part ends -->
+
+                <a class="waves-effect waves-light btn Submit-settings">Save Settings</a>
+
+              </div>
+            </div>
+            <!-- Profile ends -->
+          </div>
+        </div>
+      </div>
+
+            
+      <script>
+        
+          // Circular progress code
+
+        var el = document.getElementById('graph'); // get canvas
+
+        var options2 = {
+            percent:  el.getAttribute('data-percent') || 25,
+            size: el.getAttribute('data-size') || 220,
+            lineWidth: el.getAttribute('data-line') || 15,
+            rotate: el.getAttribute('data-rotate') || 0
+        }
+
+        var canvas = document.createElement('canvas');
+        var span = document.createElement('span');
+        span.textContent = options2.percent + '%';
+            
+        if (typeof(G_vmlCanvasManager) !== 'undefined') {
+            G_vmlCanvasManager.initElement(canvas);
+        }
+
+        var ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = options2.size;
+
+        el.appendChild(span);
+        el.appendChild(canvas);
+
+        ctx.translate(options2.size / 2, options2.size / 2); // change center
+        ctx.rotate((-1 / 2 + options2.rotate / 180) * Math.PI); // rotate -90 deg
+
+        //imd = ctx.getImageData(0, 0, 240, 240);
+        var radius = (options2.size - options2.lineWidth) / 2;
+
+        var drawCircle = function(color, lineWidth, percent) {
+            percent = Math.min(Math.max(0, percent || 1), 1);
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+            ctx.strokeStyle = color;
+                ctx.lineCap = 'round'; // butt, round or square
+            ctx.lineWidth = lineWidth
+            ctx.stroke();
+        };
+
+        drawCircle('#efefef', options2.lineWidth, 100 / 100);
+        drawCircle('#555555', options2.lineWidth, options2.percent / 100);
+
+
+
+        function profile_upload() {
+            var options =
+            {
+                thumbBox: '.thumbBox',
+                spinner: '.spinner',
+                imgSrc: ''
+            }
+            var cropper = $('.imageBox').cropbox(options);
+            $('.profile-image-input').on('change', function(){
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    options.imgSrc = e.target.result;
+                    cropper = $('.imageBox').cropbox(options);
+                }
+                reader.readAsDataURL(this.files[0]);
+                this.files = [];
+                $('.container1').css('display','block');
+            })
+            $('#btnCrop').on('click', function(){
+                var img = cropper.getDataURL();
+                $(".profile-image").attr('src', img);
+            })
+            $('#btnZoomIn').on('click', function(){
+                cropper.zoomIn();
+            })
+            $('#btnZoomOut').on('click', function(){
+                cropper.zoomOut();
+            })
+            $('#btnSet').on('click', function()
+            {
+              var img = cropper.getDataURL();
+              $(".profile-image").attr('src', img);
+              $('.container1').css('display','none');
+              options2.percent += 25;
+              drawCircle('#555555', options2.lineWidth, options2.percent / 100);
+              console.log(options2.percent);
+            })
+        }
+
+
+
+        $(document).ready(function(){
+          $('.side-nav').css("visibility","visible");
+          $('#wrapped-menu').css("visibility","visible");
+          $('#wrapped-menu').click(function ()
+          {
+            $('.side-nav').slideToggle();
+          });         
+
+          $('.Submit-settings').click(function()
+          {
+            options2.percent += 25;
+            drawCircle('#555555', options2.lineWidth, options2.percent / 100);
+            console.log(options2.percent);
+          });
+          profile_upload();
+        });
+
+
+
+        $(function() 
+        {
+          $('.datepicker').datepicker();
+
+          $('.image-editor').cropit({
+            
+            imageBackground: true,
+            imageBackgroundBorderWidth: 20,
+            imageState: {
+              // src: 'http://lorempixel.com/500/400/'
+            }
+            
+          });
+          $('.cropit-image-input').click(function(event) {
+            /* Act on the event */
+          
+          $(".cropit-image-preview").show();
+
+          $('.export').css('display','block');
+            $('.cropit-image-zoom-input').css('display','block');
+
+          });
+
+          $('.image_upload').click(function(){
+            $('.cover-image-input').trigger('click');
+            $('.export').css('display','block');
+          });
+
+          $('.profile-upload').click(function(){
+            $('.profile-image-input').trigger('click');
+          });
+
+          $('.export').click(function() {
+            // var imageData = $('.image-editor').cropit('export');
+            // $(".cover_page img").attr('src', imageData);
+            $(".cropit-image-preview").hide();
+            $('.export').css('display','none');
+            $('.cropit-image-zoom-input').css('display','none');
+            options2.percent += 25;
+            drawCircle('#555555', options2.lineWidth, options2.percent / 100);
+            console.log(options2.percent);
+            // window.open(imageData);
+          });
+        });
+
+
+      
+      </script>
+    </body>
+</html>

@@ -1,0 +1,442 @@
+<html>
+    <head>
+    	<title>MyApp</title>
+      <meta charset=utf-8 />
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      	<link type="text/css" rel="stylesheet" href="css/style.css">
+
+        <!-- <link rel="stylesheet"  href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" />  -->
+        <!-- <link rel="stylesheet" href="jquery.mobile.datepicker.css" /> -->
+        <!-- <link rel="stylesheet" href="jquery.mobile.datepicker.theme.css" /> -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+        <script type="text/javascript" src="js/materialize.min.js"></script>   
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper z-depth-1">
+          <div class="container">
+            <div class="col s12 m12 l12">
+                  <a href="#!" class="brand-logo"><img src="images/name2.png"></a>
+                  <a href="#!" id="wrapped-menu" class="wrap-menu mdi-navigation-menu waves-effect "></a>
+                  <ul class="side-nav">
+                      <!-- <li><a href="#"><i class="mdi-action-perm-contact-cal left"></i>Contact</a></li> -->
+                      <li><a href="login.html"><i class="mdi-action-home left"></i>Home</a></li>
+                      <li class="active"><a href="#"><i class="mdi-action-search left"></i>Search</a></li>
+                      <li><a href="profile.html"><i class="mdi-action-face-unlock left"></i>Profile</a></li>
+                      <li><a href="event.html"><i class="mdi-action-view-module left"></i>Event</a></li>
+                  </ul>
+                  <!-- <div class="wrap-menu">
+                    <input class="menu-btn" id="menu-id" type="button" name="menu" value="&#9776; Menu">
+                  </div> -->
+
+            </div>
+          </div>
+          </div>
+      </nav>
+
+      <div class="main-container clearfix">
+        <div class="container">
+          <div class="row">
+             <!-- Search page starts -->
+              <div class="col s12 m12 l12 search-container ">
+                <!-- <textarea placeholder="Comment here..."></textarea> -->
+                <input type="text" placeholder="Search here..." id="tags" class="search-box">
+                <div class="add-tags clearfix"></div>
+                <div class="ui-content">
+                  <!-- <input type="text" class="date-input" data-inline="false" data-role="date"> -->
+                  <!-- <input type="text" class="date-input-inline date-view" data-inline="true" data-role="date"> -->
+                  <!-- <input type="date" class="datepicker"> -->
+                  <input id="birthdate" type="text" class="datepicker picker__input" readonly="true" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="birthdate_root">
+                </div>
+                <!-- Quiz container -->  
+                
+                <div class="progressKeeper" ><div id="progresstracker"></div></div> 
+                <div class="quiz-container quiz-slider">
+                  <div class="progress-viewer" id="progress">
+                      Let's get started..!
+                  </div>
+                  <div class="questions_container">
+                    <div class="questions">
+                      1. question 1
+                    </div>
+                    <div class="answers">
+                      <ul> 
+                         
+                        <li> 
+                        <input id="1a" value="a" type="radio" name="options0"><label class="xyz" for="1a">Ans a</label> 
+                        </li> 
+                        <li> 
+                        <input id="1b" value="b" type="radio" name="options0"><label class="xyz" for="1b">Ans b</label> 
+                        </li> 
+                        <li> 
+                        <input id="1c" value="c" type="radio" name="options0"><label class="xyz" for="1c">Ans c</label> 
+                        </li> 
+                        <li> 
+                        <input id="1d" value="d" type="radio" name="options0"><label class="xyz" for="1d">Ans d</label> 
+                        </li> 
+                          
+                      </ul>
+                    </div>
+                
+                    <div class="questions">
+                      2. question 2
+                    </div>
+                    <div class="answers">
+                      <ul> 
+                          
+                          <li> 
+                          <input id="2a" value="a" type="radio" name="options1"><label class="xyz" for="2a">Ans a</label> 
+                          </li> 
+                          <li> 
+                          <input id="2b" value="b" type="radio" name="options1"><label class="xyz" for="2b">Ans b</label> 
+                          </li> 
+                          <li> 
+                          <input id="2c" value="c" type="radio" name="options1"><label class="xyz" for="2c">Ans c</label> 
+                          </li> 
+                          <li> 
+                          <input id="2d" value="d" type="radio" name="options1"><label class="xyz" for="2d">Ans d</label> 
+                          </li> 
+                            
+                      </ul>
+                    </div>
+                
+                    <div class="questions">
+                      3. question 3
+                    </div>
+                    <div class="answers">
+                      <ul > 
+                           
+                          <li> 
+                          <input id="3a" value="a" type="radio" name="options2"><label class="xyz" for="3a">Ans a</label> 
+                          </li> 
+                          <li> 
+                          <input id="3b" value="b" type="radio" name="options2"><label class="xyz" for="3b">Ans b</label> 
+                          </li> 
+                          <li> 
+                          <input id="3c" value="c" type="radio" name="options2"><label class="xyz" for="3c">Ans c</label> 
+                          </li> 
+                          <li> 
+                          <input id="3d" value="d" type="radio" name="options2"><label class="xyz" for="3d">Ans d</label> 
+                          </li> 
+                           
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="add_question" id="new_q">
+                    <h2> Upload Question</h2>
+                    <div class="questions" >
+                      <textarea id="new_question" rows="2" cols="50" name="new_q" placeholder="Add Question"></textarea>
+                    </div>
+                    <div class="answers new_ans">
+                      <ul > 
+                              <li> 
+                                <textarea id="ans0" class="new_answers" rows="2" cols="50" name="opt_1" placeholder="Option A"></textarea>
+                              </li> 
+                              <li> 
+                                <textarea id="ans1" class="new_answers" rows="2" cols="50" name="opt_2" placeholder="Option B"></textarea>
+                              </li> 
+                              <li> 
+                                <textarea id="ans2" class="new_answers" rows="2" cols="50" name="opt_3" placeholder="Option C"></textarea>
+                              </li> 
+                              <li> 
+                                <textarea id="ans3" class="new_answers" rows="2" cols="50" name="opt_4" placeholder="Option D"></textarea>
+                              </li>   
+                          </ul> 
+                    </div>
+                    <div class="corr_ans">
+                      <select name="corr_opt" id="optn">
+                        <option value="" disabled selected>-Correct Option-</option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="d">D</option>
+                      </select> 
+                    </div>
+                  </div>
+
+                  <div id="alert" style="float:right; color:red; display:none;"> Please answer all the questions...!!</div>
+
+                  <div class="result-viewer">
+                    <h2>Results</h2>
+                    <p id="msg"></p>
+                  </div>
+                </div> 
+                <!-- Quiz ends -->
+
+                <div class="btnContainer">
+                  <a class="waves-effect waves-light btn" id="add_q">Add Question</a>
+                  <a class="waves-effect waves-light btn" id="submit_q">Submit</a>
+                  <a class="waves-effect waves-light btn" id="calc_result">Result</a>
+                  <a class="waves-effect waves-light btn" id="reset">Reset</a>
+                </div>
+
+              </div>
+              <!-- Search page ends -->
+
+              
+          </div>
+        </div>
+      </div>
+
+        
+        <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <!-- // <script src="external/jquery-ui/datepicker.js"></script> -->
+        <!-- // <script src="jquery.mobile-git.js"></script>  -->
+        <!-- // <script src="jquery.mobile.datepicker.js"></script> -->
+        <script>
+
+          $(function(){
+              // $( ".date-input-css" ).datepicker();
+              // $('.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper').css('background','initial');
+              $('.ui-page-theme-a').removeClass();
+              $('.ui-icon-loading').parent().remove();
+              var temp=$('body').children(0);
+              temp.removeAttr('data-role');
+              temp.removeAttr('data-url');
+              temp.removeAttr('class');
+              temp.removeAttr('tabindex');
+              $('.corr_ans').children(0).removeAttr('class');
+              $('.corr_ans').children(0).removeAttr('id');
+              $('.corr_ans').children(0).children('span').remove();
+            });
+
+          $(document).ready(function(){
+          // $('.materialboxed').materialbox();
+
+            var selectedTags = [];
+            var flag=0;
+            var index=0;
+            var store="";
+            var prgs=$('#progresstracker');
+            var counter;
+            var score=0;
+            var i;
+            var ans = ['a','b','c'];
+            var user_result= new Array();
+            var prgs_width= 548;
+            var upload_q;
+            var upload_ans= new Array();
+            var upload_opt;
+
+            $('.side-nav').css("visibility","visible");
+            $('#wrapped-menu').css("visibility","visible");
+            $('.date-view').prop('disabled','true');
+            $('#submit_q').addClass('disabled');
+
+            $('#wrapped-menu').click(function ()
+            {
+              $('.side-nav').slideToggle();
+            });
+            
+            $('.datepicker').pickadate();
+            //   selectMonths: true, // Creates a dropdown to control month
+            //   selectYears: 15 // Creates a dropdown of 15 years to control year
+            // 
+
+            
+            $('.quiz-container').on('click', 'input[type="radio"]', function()
+            {
+              counter=$('input[type="radio"]:checked').length;
+              prgs.animate({ width: counter * Math.round(prgs_width/ans.length) });          
+            });
+
+            $('#add_q').click(function()
+            {
+              $('#submit_q').removeClass('disabled');
+              $('#calc_result').addClass('disabled');
+              // $('#submit_q').addClass('disabled');
+              $('#alert').hide();
+              $('.result-viewer').hide();
+              // $('.questions_container').hide(700);
+              $('.add_question').show();
+            });
+
+            $('#submit_q').click(function()
+            {
+                $('#calc_result').removeClass('disabled');
+                upload_q=$('#new_question').val();
+                
+                upload_ans[0]=$('#ans0').val();
+                upload_ans[1]=$('#ans1').val();
+                upload_ans[2]=$('#ans2').val();
+                upload_ans[3]=$('#ans3').val();
+
+                // console.log(upload_ans[2]);
+                
+                upload_opt=$('#optn').val();
+                // var t = ans.length;
+                ans[ans.length]=upload_opt;
+                var num=ans.length-1;
+
+                console.log(ans[3]);
+                $('.questions_container').append('<div class="questions">'+ ans.length + '.' + upload_q +'</div><div class="answers"><ul><li> <input id="'+ans.length+'a" value="a" type="radio" name="options'+num+'"><label class="xyz" for="'+ans.length+'a">'+upload_ans[0]+'</label></li><li><input id="'+ans.length+'b" value="b" type="radio" name="options'+num+'"><label class="xyz" for="'+ans.length+'b">'+upload_ans[1]+'</label></li> <li><input id="'+ans.length+'c" value="c" type="radio" name="options'+num+'"><label class="xyz" for="'+ans.length+'c">'+upload_ans[2]+'</label></li> <li><input id="'+ans.length+'d" value="d" type="radio" name="options'+num+'"><label class="xyz" for="'+ans.length+'d">'+upload_ans[3]+'</label></li> </ul></div>');
+                $('.add_question').hide(700);
+                $('.questions_container').show();
+                console.log(upload_opt);
+                prgs.animate({ width: 0});
+                // $('input[type="radio"]').removeAttr('checked');
+                $(this).addClass('disabled');
+            });
+
+            $('.btnContainer').on('click', '#calc_result', function()
+            { 
+              // alert("jcd");
+              // $(this).attr("disabled","disabled");
+              if (!$('#calc_result').hasClass('disabled'))
+              {
+              if (counter==ans.length)
+              {
+                //e.preventDefault();
+                // $(this).attr("disabled","disabled");
+                // $('body').off('click', '#calc_result', disabler);
+                if (confirm("Are you sure you want to submit the test?") == true)
+                {
+                  $('#alert').hide();
+                  $('.questions_container').hide(700);
+                  prgs.animate({ width: 0});
+                  $('.result-viewer').show();
+                  for (i=0; i<ans.length; i++)
+                  {
+                    user_result[i]=$('input[name="options' + i +'"]:checked').val();
+                    console.log(user_result[i]);
+                  }
+                  for (i = 0; i < ans.length; i++) {
+                    console.log(ans[i]);
+                    if(user_result[i]==ans[i])
+                    { 
+                      
+                      score++;
+                    }
+                    console.log (i);
+                  };
+                  if (score >= 2)
+                  {
+                    $('#msg').html("Congratulations!! You scored :" + score + " out of " + ans.length);
+                  }
+                  else 
+                  {
+                    $('#msg').html("Ohh!! You scored :" + score + " out of " + ans.length);
+                  }
+                  // $(this).attr("disabled","disabled");
+                  $(this).addClass('disabled');
+                  // $('#calc_result').prop("disabled",true);
+                }
+              }
+              else
+              {
+                $('#alert').show();
+              }
+              }
+            });
+
+            $('#reset').click(function()
+            { 
+              prgs.animate({ width: 0});
+              $('input[type="radio"]').removeAttr('checked');
+              $('.result-viewer').hide();
+              $('#calc_result').removeClass('disabled');
+              $('#submit_q').addClass('disabled');
+              $('.questions_container').show();
+              counter=0;
+              user_result.length=0;
+              score=0;
+              // console.log(user_result[0]);
+            })
+
+            // Code for auto complete
+               var availableTags = [
+                    "ActionScript",
+                    "AppleScript",
+                    "Asp",
+                    "BASIC",
+                    "C",
+                    "C++",
+                    "Clojure",
+                    "COBOL",
+                    "ColdFusion",
+                    "Erlang",
+                    "Fortran",
+                    "Groovy",
+                    "Haskell",
+                    "Java",
+                    "JavaScript",
+                    "Lisp",
+                    "Perl",
+                    "PHP",
+                    "Python",
+                    "Ruby",
+                    "Scala",
+                    "Scheme"
+                ];
+                $( "#tags" ).autocomplete({
+                  source: availableTags
+                });
+
+            $('.add-tags').on('click', '.cancel', function(event) {
+              store=$(this).parent('span').text();
+              $(this).parent().remove();
+              for(var j=0;j<selectedTags.length;j++)
+              {
+                if(store==selectedTags[j])
+                {
+                  index=j;
+                }
+              }
+              availableTags[index]=selectedTags[index];
+              selectedTags[index]="";
+            });
+
+
+            $('#tags').on('keydown',function(e)
+            {
+              if($(this).val()!="")
+              {
+                if(e.keyCode==13)
+                { flag=0;
+                  var ans=$(this).val();
+                  for(var i=0;i<availableTags.length;i++)
+                  {
+                    if(ans==availableTags[i])
+                    {
+                        flag=1;
+                        index=i;
+                    }
+                  }
+                  if(flag==1)
+                  {
+                    availableTags[index]="";
+                    selectedTags[index]=ans;
+                    $('.add-tags').prepend('<span class="tag-list">'+ ans+'<img class="cancel" src="images/cancel.png" style="cursor: pointer;margin: 0 0 3px 7px;height: 12px;"></span>');
+                    $(this).val("");
+                  }
+                }
+              }
+            });
+
+            $('body').on('click', '.ui-menu-item', function(event)
+            {
+              // alert("hi");
+                  flag=0;
+                  var ans=$(this).html();
+                  for(var i=0;i<availableTags.length;i++)
+                  {
+                    if(ans==availableTags[i])
+                    {
+                        flag=1;
+                        index=i;
+                    }
+                  }
+                  if(flag==1)
+                  {
+                    availableTags[index]="";
+                    selectedTags[index]=ans;
+                    $('.add-tags').prepend('<span class="tag-list">'+ ans+'<img class="cancel" src="images/cancel.png" style="cursor: pointer;margin: 0 0 3px 7px;height: 12px;"></span>');
+                    $('#tags').val("");
+                  }
+            });
+          });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+    <head>
+    	<title>MyApp</title>
+      <meta charset=utf-8 />
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      	
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!-- Compiled and minified JavaScript -->
+  		
+         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+         <script type="text/javascript" src="js/materialize.min.js"></script>
+      	
+        <style>
+          .radial-progress {
+            @circle-background: #d6dadc;
+            @circle-color: #97a71d;
+            background-color: @circle-background;
+            .circle .fill {
+              background-color: @circle-color;
+            }
+          }
+
+          .radial-progress {
+            @circle-size: 120px;
+            width: @circle-size;
+            height: @circle-size;
+            .circle .fill {
+              width: @circle-size;
+              height: @circle-size;
+            }
+          }
+
+          .radial-progress {
+              @transition-length: 1s;
+              .circle .fill {
+                transition: -webkit-transform @transition-length;
+                transition: -ms-transform @transition-length;
+                transition: transform @transition-length;
+              }
+            }
+
+            .radial-progress {
+              .circle .fill {
+                position: absolute;
+                /* rect(<top>, <right>, <bottom>, <left>) */
+                clip: rect(0px, @circle-size/2, @circle-size, 0px);
+              }
+            }
+
+
+          .circle{
+            background: #d6dadc;
+            color: #97a71d;
+            size: 120px;
+            width: 120px;
+            height: 120px;
+          }
+
+          .radial-progress{
+            background-color: #d6dadc;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background: #d6dadc;
+            color: #97a71d;
+            transition: -webkit-transform 1s;
+                transition: -ms-transform 1s;
+                transition: transform 1s;
+          }
+
+          .mask{
+            clip: rect(0px, 120/2, 120, 0px);
+            position: absolute;
+            border-radius: 50%;
+            -webkit-backface-visibility: hidden;
+            width: 120px;
+            height: 120px;
+          }
+
+          .fill{
+            background-color: #97a71d;
+            width: 120px;
+            height: 120px;
+            transition: -webkit-transform 1s;
+                transition: -ms-transform 1s;
+                transition: transform 1s;
+                position: absolute;
+                clip: rect(0px, 120/2, 120, 0px);
+                -webkit-backface-visibility: hidden;
+                border-radius: 50%;
+          }
+
+          /*.circle .fill {
+                transition: -webkit-transform 1s;
+                transition: -ms-transform 1s;
+                transition: transform 1s;
+                position: absolute;
+                clip: rect(0px, 120/2, 120, 0px);
+                -webkit-backface-visibility: hidden;
+                border-radius: 50%;
+              }*/
+        </style>
+
+    </head>
+    <body>
+    <!--  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div> -->
+
+<div class="radial-progress">
+  <div class="circle">
+    <div class="mask">
+      <div class="fill"></div>
+    </div>
+  </div>
+</div>
+
+
+    <script>
+    
+    var transform_styles = ['-webkit-transform',
+                        '-ms-transform',
+                        'transform'];
+window.randomize = function() {
+ var rotation = Math.floor(Math.random() * 360);
+ for(i in transform_styles) {
+  $('.circle .fill').css(transform_styles[i],
+                         'rotate(' + rotation + 'deg)');
+ }
+}
+
+window.randomize = function() {
+  var rotation = Math.floor(Math.random() * 180);
+  var fill_rotation = rotation / 2;
+  for(i in transform_styles) {
+    $('.circle .fill').css(transform_styles[i],
+                           'rotate(' + fill_rotation + 'deg)');
+  }
+}
+
+	 </script>
+    </body>
+</html>

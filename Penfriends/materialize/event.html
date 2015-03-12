@@ -1,0 +1,140 @@
+<html>
+    <head>
+    	<title>MyApp</title>
+      <meta charset=utf-8 />
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      	<link type="text/css" rel="stylesheet" href="css/style.css">
+
+        <!-- // <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        
+        <!-- <link rel="stylesheet"  href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" />  -->   
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper z-depth-1">
+          <div class="container">
+            <div class="col s12 m12 l12">
+                  <a href="#!" class="brand-logo"><img src="images/name2.png"></a>
+                  <a href="#!" id="wrapped-menu" class="wrap-menu mdi-navigation-menu waves-effect "></a>
+                  <ul class="side-nav">
+                      <!-- <li><a href="#"><i class="mdi-action-perm-contact-cal left"></i>Contact</a></li> -->
+                      <li><a href="login.html"><i class="mdi-action-home left"></i>Home</a></li>
+                      <li><a href="search.html"><i class="mdi-action-search left"></i>Search</a></li>
+                      <li><a href="profile.html"><i class="mdi-action-face-unlock left"></i>Profile</a></li>
+                      <li class="active"><a href="#"><i class="mdi-action-view-module left"></i>Event</a></li>
+                  </ul>
+                  <!-- <div class="wrap-menu">
+                    <input class="menu-btn" id="menu-id" type="button" name="menu" value="&#9776; Menu">
+                  </div> -->
+
+            </div>
+          </div>
+          </div>
+      </nav>
+
+      <div class="main-container clearfix">
+        <div class="container">
+          <div class="row">
+
+          <!-- Profile page starts -->
+          <div class="col s12 m12 l12 event-container">
+            <div class="event-view">
+              <div class="form-row">                              
+                <form>
+                <div class="comment-box">
+                  <!-- <textarea name="comment-textarea" placeholder="Name" class="validate"></textarea> -->
+                  <input id="first_name" type="text" class="validate" placeholder="First Name" name="comment-textarea">
+                
+                  <input name="comment-textarea" id="username" type="text" class="validate" placeholder="User Name">
+                                
+                  <input name="comment-textarea" id="password" type="password" class="validate" placeholder="Password">
+               
+                  <input name="comment-textarea" id="cnfrm-password" type="password" class="validate" placeholder="Confirm Password">
+
+                  <input name="comment-textarea" id="email" type="email" class="validate" placeholder="Alternate Email">
+                </div>
+                
+                <p>
+                  <input class="with-gap" name="group1" type="radio" id="male" />
+                  <label for="male">Male</label>
+                
+                  <input class="with-gap" name="group1" type="radio" id="female" checked />
+                  <label for="female">Female</label>
+                </p>
+
+                <div class="switch" style="margin: 25px 0">
+                  <label>
+                    Off
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    On
+                  </label>
+                </div>
+
+                <div style="margin: 25px 0" class="clearfix">
+                  <ul id="sortable1" class="connectedSortable">
+                    <li class="ui-state-default">Item 1</li>
+                    <li class="ui-state-default">Item 2</li>
+                    <li class="ui-state-default">Item 3</li>
+                    <li class="ui-state-default">Item 4</li>
+                    <li class="ui-state-default">Item 5</li>
+                  </ul>
+                   
+                  <ul id="sortable2" class="connectedSortable">
+                    <li class="ui-state-highlight">Item 1</li>
+                    <li class="ui-state-highlight">Item 2</li>
+                    <li class="ui-state-highlight">Item 3</li>
+                    <li class="ui-state-highlight">Item 4</li>
+                    <li class="ui-state-highlight">Item 5</li>
+                  </ul>
+                </div>
+
+                
+                <div class="input-field col s10" >
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                  <label for="icon_prefix2">Comments...</label>
+                </div>
+
+                <p>
+                <a class="waves-effect waves-light btn Submit-form">Submit</a>
+                </p>
+
+                </form>
+              </div>
+            </div>
+          </div>
+            <!-- Profile ends -->
+          </div>
+        </div>
+      </div>
+
+      <!-- // <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+      <!-- // <script type="text/javascript" src="js/materialize.min.js"></script> -->
+      <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>  
+      <script>
+
+        $(function() {
+          $( "#sortable1, #sortable2" ).sortable({
+            connectWith: ".connectedSortable"
+          }).disableSelection();
+        });
+
+        $(document).ready(function(){
+          $('.side-nav').css("visibility","visible");
+          $('#wrapped-menu').css("visibility","visible");
+
+          $('#wrapped-menu').click(function ()
+          {
+            $('.side-nav').slideToggle();
+          });
+        });        
+
+        
+      </script>
+    </body>
+</html>
