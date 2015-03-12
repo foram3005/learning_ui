@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuiz</title>
+	<link type="text/css" rel="stylesheet" href="stylecss.css"/>
+	<!-- <script src="script.js" type="text/javascript" charset="utf-8" async defer></script> -->
+</head>
+<body>
+
+	
+	<div class="main-quiz-container">
+		
+		<!-- Start page -->
+		<div class="intro-page slider">
+			<img src="img/quiz-2.jpg" alt="quiz-image">
+			<img class="quiz-header" src="img/header.png">	
+			<a class="btnStart" href="#" onclick="startquiz(quizData)"><img src="img/start.png" alt="image"></a>
+			<a class="btnUpload" href="#" onclick="add_question()">Upload</a>
+		</div>
+
+		 <!-- Questions slider starts -->
+		<div class="question-container slider" >
+			<div class="questions" id="questn">
+			</div>
+			<div class="answers">
+				<ul > 
+		            <li> 
+		            <li> 
+		            <input id="a" value="a" type="radio" name="options0"><label class="xyz" for="a"></label> 
+		            </li> 
+		            <li> 
+		            <input id="b" value="b" type="radio" name="options0"><label class="xyz" for="b"></label> 
+		            </li> 
+		            <li> 
+		            <input id="c" value="c" type="radio" name="options0"><label class="xyz" for="c"></label> 
+		            </li> 
+		            <li> 
+		            <input id="d" value="d" type="radio" name="options0"><label class="xyz" for="d"></label> 
+		            </li> 
+		            </li>  
+		        </ul> 
+			</div>
+		</div>	
+		<!-- Question slider ends -->
+
+		<!-- Add question slider starts-->
+		<div class="question-container slider" id="add_questn">
+			<h2> Upload Question</h2>
+			<div class="questions " >
+				<textarea id="new_question" rows="3" cols="50" name="new_q" placeholder="Add Question"></textarea>
+			</div>
+			<div class="answers">
+				<ul > 
+		            <li> 
+		            <li> 
+		            	<textarea class="new_answers" rows="2" cols="50" name="opt_a" placeholder="Option A"></textarea>
+		            </li> 
+		            <li> 
+		            	<textarea class="new_answers" rows="2" cols="50" name="opt_b" placeholder="Option B"></textarea>
+		            </li> 
+		            <li> 
+		            	<textarea class="new_answers" rows="2" cols="50" name="opt_c" placeholder="Option C"></textarea>
+		            </li> 
+		            <li> 
+		            	<textarea class="new_answers" rows="2" cols="50" name="opt_d" placeholder="Option D"></textarea>
+		            </li> 
+		            </li>   
+		        </ul> 
+			</div>
+			<div class="corr_ans">
+				<select name="corr_opt">
+					<option value="Correct Option">-Correct Option-</option>
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+				</select>	
+			</div>
+		</div>
+		<!-- Add question slider ends -->
+
+		<!-- Result page -->
+		<div class="result-page slider" id="result_view">
+			<div class="result-viewer">
+				<h2>Results</h2>
+				<p id="msg"></p>
+			</div>
+		</div>
+
+		<!-- Progress slider -->
+		<div class="progress-slider slider">
+			<div class="progress-viewer" id="progress">
+				Let's get started..!
+			</div>
+		</div> 
+		<div class="alert"> Please select an option</div>
+		<div class="btnContainer"> 
+		    <div class="prev" id="prev"><a class="btnPrev" href="#" onclick="prevQuestn(quizData)">Prev</a></div> 
+		    <div class="upload" id="upload"><a class="btnSubmit" href="#" onclick="uploadQuestn(quizData)">Upload</a></div> 
+		    <div class="next" id="nextbtn"><a class="btnNext" id="next" href="#" onclick="nextQuestn(quizData)">Next</a></div> 
+		    <!-- <div class="result-icon" id="chck_result"><a class="chckResult"  href="#" onclick="nextQuestn()">Next</a></div> -->
+		</div>
+	</div>
+
+<!-- <script>
+
+	var xmlhttp = new XMLHttpRequest();
+	var url = "script.txt";
+
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	        var quizData = JSON.parse(xmlhttp.responseText);
+	        startquiz(quizData);
+	    }
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+
+	// function myFunction(arr) {
+	//     var out = "";
+	//     var i;
+	//     for(i = 0; i < arr.length; i++) {
+	//         out += '<a href="' + arr[i].url + '">' + 
+	//         arr[i].display + '</a><br>';
+	//     }
+	//     document.getElementById("id01").innerHTML = out;
+	// }
+
+
+	var counter=0;
+	var score=0;
+	var set_q="";
+	var set_ans= new Array();
+	var ans = ['a','b','c','d','a'];
+	var user_result=[];
+	// var x = new Array();
+	var curr_q = document.getElementsByClassName('question-container');
+	var btn= document.getElementsByClassName('btnContainer');
+	var progress = document.getElementById('progress'); 
+	var temp = document.getElementsByClassName('xyz');
+	var err = document.getElementsByClassName('alert');
+
+	function startquiz (arr)
+	{
+	  var intro = document.getElementsByClassName("intro-page");
+	  intro[0].style.display="none";
+	  curr_q[0].style.display="block";
+	  progress.innerHTML=counter+1 + "/" + ans.length;
+	  set_q=arr[counter].questions;
+	  document.getElementById('questn').innerHTML=set_q;
+	  for (i=0; i<4; i++)
+	  {
+	    set_ans[i]=arr[counter].answers[i];
+	    temp[i].innerHTML = set_ans[i];
+	  }
+	  // counter++;
+	  btn[0].style.display="block"; 
+	}
+
+	function nextQuestn(arr_next)
+	{ 
+
+	  document.getElementById('prev').style.display="block";
+	  if (!document.querySelector('input[name="options0"]:checked'))
+	    {
+	      err[0].style.display="block";
+	    }
+	  else
+	    {
+	      err[0].style.display="none";
+	      if(counter==arr_next.length-1)
+	      {
+	        
+	          user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+	          // console.log(user_result[counter]);
+	          counter++;
+	          for (i = 0; i < ans.length; i++) 
+	          {
+	            
+	            if(user_result[i]==ans[i])
+	            {
+	              score++;
+	            }
+	             
+	          }
+	          curr_q[0].style.display="none";
+	          btn[0].style.display="none";
+	          document.getElementById('result_view').style.display="block";
+	          progress.innerHTML="Finished";
+	          if (score >= 3)
+	          {
+	            document.getElementById('msg').innerHTML="Congratulations!! You scored :" + score + " out of " + ans.length;
+	          }
+	          else 
+	          {
+	            document.getElementById('msg').innerHTML="Ohh!! You scored :" + score + " out of " + ans.length;
+	          }
+	      }
+
+
+	      else
+	      {
+	        if(counter==arr_next.length-2)
+	        {
+	          document.getElementById('next').innerHTML="Result";
+	        }
+	        user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+	        // console.log(user_result[counter]);
+	        set_q=arr_next[counter+1].questions;
+	        document.getElementById('questn').innerHTML=set_q;
+	        for (i=0; i<4; i++)
+	        {
+	          set_ans[i]=arr_next[counter+1].answers[i];
+	          temp[i].innerHTML = set_ans[i];
+	        }
+	        counter ++;
+	        progress.innerHTML=counter+1 + "/" + ans.length;
+	        
+	      }
+	    }
+
+	  if (user_result[counter]==undefined)
+	  {
+	    // alert("in");
+	    var unchck = document.getElementsByTagName('input')
+	    for (i=0; i<4; i++)
+	    { 
+	      unchck[i].checked=false;
+	    }
+	  }
+	  else
+	  {
+	    document.getElementById(user_result[counter]).checked=true;
+	  }
+
+	}
+
+	function prevQuestn(arr_prev)
+	{
+	  if (!document.querySelector('input[name="options0"]:checked'))
+	    {
+	      err[0].style.display="block";
+	    }
+	  else
+	    {
+	      err[0].style.display="none";
+	      user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+	      console.log(user_result[counter]);
+	      document.getElementById(user_result[counter-1]).checked=true;
+
+	      document.getElementById('next').innerHTML="Next";
+	      if(counter==1)
+	      {
+	        document.getElementById('prev').style.display="none";
+	        
+	      }
+	      
+	      set_q=arr_prev[counter-1].questions;
+	      document.getElementById('questn').innerHTML=set_q;
+	      for (i=0; i<4; i++)
+	      {
+	        set_ans[i]=arr_prev[counter-1].answers[i];
+	        temp[i].innerHTML = set_ans[i];
+	      }
+	      progress.innerHTML=counter + "/" + ans.length;
+	      counter --;
+	    }
+	}
+
+</script> -->
+
+<script>
+var obj="";
+var xmlhttp = new XMLHttpRequest();
+var url = "script.json";
+var quizData;
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        quizData = JSON.parse(xmlhttp.responseText);
+        // startquiz(quizData);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+var counter=0;
+var score=0;
+var set_q="";
+var set_ans= new Array();
+var ans = ['a','b','c','d','a'];
+var user_result=[];
+var upload_q;
+var upload_ans= new Array();
+var upload_opt;
+// var x = new Array();
+var curr_q = document.getElementsByClassName('question-container');
+var btn= document.getElementsByClassName('btnContainer');
+var progress = document.getElementById('progress'); 
+var temp = document.getElementsByClassName('xyz');
+var err = document.getElementsByClassName('alert');
+var add_q = document.getElementById('add_questn');
+var intro = document.getElementsByClassName("intro-page");
+
+function startquiz (arr)
+{
+  add_q.style.display="none";
+  document.getElementById('upload').style.display="none";
+  btn[0].style.display="block";
+  document.getElementById('nextbtn').style.display="block";
+  	document.getElementById('prev').style.display="block"; 
+  intro[0].style.display="none";
+  curr_q[0].style.display="block";
+  progress.innerHTML=counter+1 + "/" + ans.length;
+  set_q=arr[counter].questions;
+  document.getElementById('questn').innerHTML=set_q;
+  for (i=0; i<4; i++)
+  {
+    set_ans[i]=arr[counter].answers[i];
+    temp[i].innerHTML = set_ans[i];
+  }
+  // counter++;
+  btn[0].style.display="block"; 
+}
+
+function add_question ()
+{
+	intro[0].style.display="none";
+	add_q.style.display="block";
+	btn[0].style.display="block";
+	document.getElementById('nextbtn').style.display="none";
+  	document.getElementById('prev').style.display="none"; 
+  	document.getElementById('upload').style.display="block";
+
+}
+
+function uploadQuestn (arr_upload)
+{
+  	upload_q=document.getElementById('new_question').value;
+  	console.log(upload_q);
+  	var new_options=document.getElementsByClassName('new_answers');
+  	for (var i = 0; i < 4; i++) 
+  		{
+  			upload_ans[i]=new_options[i].value;
+  			console.log(upload_ans[i]);
+  		};
+  	var x=document.getElementsByName('corr_opt');
+  	upload_opt=x[0].options[x[0].selectedIndex].value;
+  	console.log(upload_opt);
+  	arr_upload.push({"questions": upload_q, "answers" :[upload_ans[0],upload_ans[1],upload_ans[2],upload_ans[3]]});
+  	obj = JSON.stringify(arr_upload);
+  	intro[0].style.display="block";
+	add_q.style.display="none";
+	btn[0].style.display="none";
+
+}
+
+function nextQuestn(arr_next)
+{ 
+
+  document.getElementById('prev').style.display="block";
+  if (!document.querySelector('input[name="options0"]:checked'))
+    {
+      err[0].style.display="block";
+    }
+  else
+    {
+      err[0].style.display="none";
+      if(counter==arr_next.length-1)
+      {
+        
+          user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+          // console.log(user_result[counter]);
+          counter++;
+          for (i = 0; i < ans.length; i++) 
+          {
+            
+            if(user_result[i]==ans[i])
+            {
+              score++;
+            }
+             
+          }
+          curr_q[0].style.display="none";
+          btn[0].style.display="none";
+          document.getElementById('result_view').style.display="block";
+          progress.innerHTML="Finished";
+          if (score >= 3)
+          {
+            document.getElementById('msg').innerHTML="Congratulations!! You scored :" + score + " out of " + ans.length;
+          }
+          else 
+          {
+            document.getElementById('msg').innerHTML="Ohh!! You scored :" + score + " out of " + ans.length;
+          }
+      }
+
+
+      else
+      {
+        if(counter==arr_next.length-2)
+        {
+          document.getElementById('next').innerHTML="Result";
+        }
+        user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+        // console.log(user_result[counter]);
+        set_q=arr_next[counter+1].questions;
+        document.getElementById('questn').innerHTML=set_q;
+        for (i=0; i<4; i++)
+        {
+          set_ans[i]=arr_next[counter+1].answers[i];
+          temp[i].innerHTML = set_ans[i];
+        }
+        counter ++;
+        progress.innerHTML=counter+1 + "/" + ans.length;
+        
+      }
+    }
+
+  if (user_result[counter]==undefined)
+  {
+    // alert("in");
+    var unchck = document.getElementsByTagName('input')
+    for (i=0; i<4; i++)
+    { 
+      unchck[i].checked=false;
+    }
+  }
+  else
+  {
+    document.getElementById(user_result[counter]).checked=true;
+  }
+
+}
+
+function prevQuestn(arr_prev)
+{
+  if (!document.querySelector('input[name="options0"]:checked'))
+    {
+      err[0].style.display="block";
+    }
+  else
+    {
+      err[0].style.display="none";
+      user_result[counter]=document.querySelector('input[name="options0"]:checked').value;
+      console.log(user_result[counter]);
+      document.getElementById(user_result[counter-1]).checked=true;
+
+      document.getElementById('next').innerHTML="Next";
+      if(counter==1)
+      {
+        document.getElementById('prev').style.display="none";
+        
+      }
+      
+      set_q=arr_prev[counter-1].questions;
+      document.getElementById('questn').innerHTML=set_q;
+      for (i=0; i<4; i++)
+      {
+        set_ans[i]=arr_prev[counter-1].answers[i];
+        temp[i].innerHTML = set_ans[i];
+      }
+      progress.innerHTML=counter + "/" + ans.length;
+      counter --;
+    }
+}
+
+</script>
+
+</body>
+</html>

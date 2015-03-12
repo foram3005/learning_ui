@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Jquery test
+	</title>
+	<link type="text/css" rel="stylesheet" href="files.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link href="css/jquery-ui.css" rel="stylesheet">
+
+	<script>
+	// $(document).ready(function(){
+
+	// 	$("#hoverarrow").hover(function(){
+ //  			$(this).find(".overlay-content").css("visibility","visible");
+ //  		}, function(){
+ //  			$(this).find(".overlay-content").css("visibility","hidden");
+ //  		});
+	// });
+	</script>
+</head>
+<body>
+	<div class="main-container">
+		<div class="sub-container">
+			<div class="header clearfix">
+				<div class="logo"> <img src="images/logo.png" alt="Logo"></div>
+				<div class="name"> <img src="images/name.png" alt="Music to die for..."></div>
+				<div class="search-box"><input type="button" value=" " class="btn-icon"><input type="search" placeholder="Search..." style="border:none;"></div>
+			</div>
+			<div class="menu-bar clearfix">
+				<ul>
+ 					<li><a href="index.html">About</a></li>
+ 					<li><a href="Pictures.html">My Pictures</a></li>
+ 					<li><a href="Music.html">My Music</a></li>
+ 					<li class="active"><a href="#">My Files</a></li>
+ 					<li><a href="Videos.html">My Videos</a></li>
+ 				</ul>
+			</div>
+			<div class="main-body">
+				<div class="col-lg-12">
+					<!-- <div class="tabs clearfix">
+						<ul>
+		 					<li><a href="#">Grid</a></li>
+		 					<li><a href="Pictures">Gallery</a></li>
+		 				</ul>
+					</div> -->
+					<div id="accordion" class="accord">
+						<h3>Documents</h3>
+							<div style="padding: 5px 0 0 0; ">
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png"></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png" ></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						<h3>Presentations</h3>
+							<div style="padding: 5px 0 0 0; ">
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png"></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png"></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						<h3>PDF's</h3>
+							<div style="padding: 5px 0 0 0; ">
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png"></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+								<div class="files clearfix">
+									<div style="float:left">
+										<img src="images/doc-folder.png">
+										<div class="accord-files">
+											<h4>My Document.doc</h4>
+											<br>(200 kb)<br>
+											<span>uploaded 01/30/2015 12:30pm</span>
+										</div>
+										<div class="accord-content">
+											<a><img src="images/add-icon.png"></a>
+											<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+									<div class="accord-overlay">
+										<img src="images/up-arrw-icon.png" style="float:right;" class="hoverarrow">
+										<div class="overlay-content hover-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer clearfix">
+				<img src="images/footer-bdr.png">
+				<div class="footer-blank col-lg-3"></div>
+				<div class="footer-content clearfix col-lg-6">
+					<div class="mini-logo"> <img src="images/mini-logo.png" alt="Logo"></div>
+					<div class="copyright"> <span>Copyright &copy; 2012 My Website . All Rights Reserved</span> </div>
+					<div class="dock-menu clearfix">
+					 <img class="hoverImages" src="images/twitter.png" />
+				     <img class="hoverImages" src="images/facebook.png" />
+				     <img class="hoverImages" src="images/digg.png" />
+				     <img class="hoverImages" src="images/linked.png" />
+				     <img class="hoverImages" src="images/stumble.png" />
+				     <img class="hoverImages" src="images/twitter-icon.png" />
+				    </div>
+				</div>
+				<div class="footer-tabs col-lg-3">
+					<span>EULA &nbsp</span><span>&nbsp Terms of service &nbsp</span><span style="border:none;">&nbsp privacy policy</span>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$( "#accordion" ).accordion();
+	</script>
+
+</body>
+</html>

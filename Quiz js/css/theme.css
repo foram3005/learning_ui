@@ -1,0 +1,123 @@
+body {
+  /*[font-stretch] [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family];*/
+  font: 15px/24px 'Roboto' Helvetica sans-serif;
+  color: #504A4A;
+  font-weight: 100;
+}
+
+/* Clearfix Hack */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+
+.input-wrapper {
+  width: 550px;
+  max-width: 100%;
+  margin: 0 auto;  
+}
+
+.input-wrapper .iw-listitem {
+  font-size: 1.1rem;
+}
+
+/* The UL Controls */
+
+.list-wrapper {
+  width: 553px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 30px 0;
+}
+
+.list {
+
+}
+
+.l-item {
+  margin: 10px 0;
+}
+
+.lw-controls {  
+  padding: 15px 0;
+  line-height: 2rem;
+  display: block;
+  position: relative;
+}
+
+.lwc-handleitem {
+  float: left;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  display: block;
+  visibility: hidden;
+  cursor: move;
+}
+
+
+.lw-controls .lwc-toggle {
+  position: relative;
+  display: block;
+  float: left;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  line-height: 3rem;
+}
+
+
+/* For Checkbox */
+.lwc-toggle {
+
+}
+
+.toggle {}
+
+.lwc-listcontent, .complete {
+  overflow: hidden;
+  margin: 0;
+  display: block;
+  word-wrap: break-word;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  float: none;
+  padding: 0 28px 0 0;;
+}
+
+.lwc-icon {
+  position: absolute;
+  right: 7px;
+  top: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+div.complete {
+  text-decoration: line-through;
+}
+
+
+.l-item :hover .lwc-icon, .l-item :hover .lwc-move {
+  visibility: visible;
+}
+
+.highlight {
+  border: 1px solid #535353;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	First Test
+</title>
+	<link type="text/css" rel="stylesheet" href="teststylesheet.css"/>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script >
+		$(document).ready(function ()
+		{
+			$("#swap").click( function()
+			{
+				var direction = $('.main-content').css('flex-direction');
+				if ( direction === 'row')
+				{
+					$(".main-content").css("flex-direction","row-reverse");
+				}
+				else
+					$(".main-content").css("flex-direction","row");
+
+				//$('.main-content').toggleClass('flex-direction-row-reverse');
+			})
+		})
+
+	</script>
+
+</head>
+<body>
+ <div class="mainframe"> 
+ 	<div class="header1">For Marketing Use</div>
+ 	<div class="header2"><a href="www.raweng.com"><img src="raweng-logo.png" alt="raweng-logo"></a></div>
+ 	<div class="panel">
+ 		<div class="search-tab"> 
+ 			<div id="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum, ipsum!</div> 
+ 			<div id="right">
+ 				<input type="search" name="search" placeholder="Search..." style="border:none; width: 186px; line-height:33px; display: inline-block; vertical-align: top;">
+ 				<input type="button" value=" " style="background-image: url(search.png); background-repeat:no-repeat; background-position: center; height:35px; width: 33px; border:none;border-radius: 3px;">
+ 			</div>
+ 		</div>
+ 		<div class="banner">
+ 			<div class="banner-content">
+ 				<h1 style="margin:0;"> 
+ 					<span style="color:#FFF; display:inline;letter-spacing: -1px">m</span>
+ 					<span style="color:#A2A2A2; display:inline; margin-left:-25px;letter-spacing: -1px">arketing </span>
+ 				</h1>
+ 				<div style="margin-left:100px;">
+ 					<h2 style="color:#0d72a8; font-size:70px; margin: 0; letter-spacing: -3px; font-weight: normal; line-height: 0.8;">collateral</h2>
+ 					<p style="font-size: 14px; width:403px; margin-top: 20px; font-weight: normal;">Welcome to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis, tenetur, perferendis eius impedit labore vitae tempora consectetur corporus dolores fugiat molestiae nihil facilis provident necessitatibus sit architecto voluptas ut cupididate. Lorem ipsum dolor sit amet, consectetur. 
+ 					</p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class="main-content">
+ 			<div class="leftclass" id="left-bar" style="font-size:20px;">
+ 				<ul>
+ 					<li>logos</li>
+ 					<li>banners</li>
+ 					<li>print ads</li>
+ 					<li>brouchers</li>
+ 					<li>images</li>
+ 					<li style="border-bottom: 2px solid #A2A2A2;">media kits</li>
+ 				</ul>
+ 				<div style="padding-top: 45px; text-align:center;">
+ 					<input id="swap" type="button" name="switch" value="switch" style="font-family:arial; color: #272626;">
+ 				</div>
+ 			</div>
+
+ 			<div class="right-bar">
+ 				<p style="margin:0;">TIBCO MEDIA LIBRARY</p>
+ 				<div class="row1" class="clearfix" style="border-top: 2px solid #A4A4A4;">
+ 					<div class="col1">
+ 						<div style="float:left; width:200px; ">
+							<p>
+								<img src="arrow.png" style="vertical-align:middle;" alt="Dwnload-icon"><span style="vertical-align:middle; padding-left:5px;">DOWNLOAD</span>
+							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 					<div class="col2">
+ 						<div style="float:left; width:200px; ">
+ 							<p>
+ 								<img src="arrow.png" style="vertical-align: middle;" alt="Dwnload-icon"><span style="vertical-align: middle; padding-left:5px;" >DOWNLOAD</span>
+ 							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 				</div>
+ 				<div class="row2" class="clearfix">
+ 					<div class="col1">
+ 						<div style="float:left; width:200px; letter-spacing:-.2px; ">
+ 							<p>
+ 								<img src="arrow.png" style="vertical-align:middle;" alt="Dwnload-icon"><span style="vertical-align:middle; padding-left:5px;">DOWNLOAD</span>
+ 							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 					<div class="col2">
+ 						<div style="float:left; width:200px; ">
+ 							<p>
+ 								<img src="arrow.png" style="vertical-align:middle;" alt="Dwnload-icon"><span style="vertical-align:middle; padding-left:5px;">DOWNLOAD</span>
+ 							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 				</div>
+ 				<div class="row3" class="clearfix">
+ 					<div class="col1">
+ 						<div style="float:left; width:200px; ">
+ 							<p>
+ 								<img src="arrow.png" style="vertical-align:middle;" alt="Dwnload-icon"><span style="vertical-align:middle; padding-left:5px;">DOWNLOAD</span>
+ 							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 					<div class="col2">
+ 						<div style="float:left; width:200px; ">
+ 							<p>
+ 								<img src="arrow.png" style="vertical-align:middle;" alt="Dwnload-icon"><span style="vertical-align:middle; padding-left:5px;">DOWNLOAD</span>
+ 							</p>
+ 							<h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ 						</div>
+ 						<div class="image-content"></div>
+ 					</div>
+ 				</div>
+ 				<div style="text-align:center; padding-top: 15px; padding-bottom:15px; font-size:13px; font-weight:normal;">load more
+ 				</div>
+ 			</div>	
+ 		</div>
+ 		
+ 		<div class="footer">
+ 				Copyright &copy; 2014 raw engineering &reg; , inc. All Rights Reserved. 
+ 				<span style="color:#4ba2f2; padding-right: 10px; border-right: 2px solid #a6a6a6; ">Privacy Policy</span>
+				<span style="color:#4ba2f2; padding-left:10px;">Terms of Service</span>
+ 		</div>
+ 	</div>
+ </div>
+ </body>
+ </html>

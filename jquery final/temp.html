@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Jquery test
+	</title>
+	<link type="text/css" rel="stylesheet" href="music.css"/>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/feature-carousel.css" charset="utf-8" />
+	<script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var carousel = $("#carousel").featureCarousel({
+          // include options like this:
+          // (use quotes only for string values, and no trailing comma after last option)
+          // option: value,
+          // option: value
+        });
+
+        $("#but_prev").click(function () {
+          carousel.prev();
+        });
+        $("#but_pause").click(function () {
+          carousel.pause();
+        });
+        $("#but_start").click(function () {
+          carousel.start();
+        });
+        $("#but_next").click(function () {
+          carousel.next();
+        });
+
+		$('#gridview').click (function (){
+
+			$("#gallery").hide();
+			// $("#grid").css("display","block");
+			$("#grid").show();
+								
+		});
+
+
+		$('#galleryview').click (function (){
+			
+			$("#grid").hide();
+			// $("#grid").css("display","block");
+			$("#gallery").show();
+				
+		});
+  
+      });
+
+      function playaudio (audiofile)
+        {
+        	var a=document.getElementById("myaudio1");
+        	a.pause();
+        	a.src = audiofile;
+        	a.play();	
+        };
+
+      function playnset (audiofile, id, caption)
+        {
+        	var a =document.getElementById("myaudio2");
+        	 this.id=id;
+        	console.log(id);
+        	var i = document.getElementById(id).src;
+        	document.getElementById("mainimg").src=i;
+        	console.log(caption);
+        	var t = $(caption).html();
+        	$('#txt').html(t);
+        	// document.getElementById("txt").text=t;
+        	// console.log(id);
+        	//console.log(i);
+        	//console.log(t);
+        	// var ss =s.img.src;
+        	// console.log(s);
+        	a.pause();
+        	a.src = audiofile;
+        	a.play();	
+        };
+
+    </script>
+
+</head>
+<body>
+	<div class="main-container">
+		<div class="sub-container">
+			<div class="header clearfix">
+				<div class="logo"> <img src="images/logo.png" alt="Logo"></div>
+				<div class="name"> <img src="images/name.png" alt="Music to die for..."></div>
+				<div class="search-box"><input type="button" value=" " class="btn-icon"><input type="search" placeholder="Search..." style="border:none;"></div>
+			</div>
+			<div class="menu-bar clearfix">
+				<ul>
+ 					<li><a href="index.html">About</a></li>
+ 					<li><a href="Pictures.html">My Pictures</a></li>
+ 					<li><a href="#">My Music</a></li>
+ 					<li><a href="Files.html">My Files</a></li>
+ 					<li><a href="Videos.html">My Videos</a></li>
+ 				</ul>
+			</div>
+			<div class="main-body">
+				<div class="col-lg-12">
+					<div class="tabs clearfix">
+						<ul>
+		 					<li ><a href="#grid-container"  id="gridview">Grid</a></li>
+		 					<li><a href="#list-container" id="listview">List</a></li>
+		 					<li ><a href="#gallery-container"  id="galleryview">Gallery</a></li>
+		 				</ul>
+					</div>
+					<div class="gallery-container clearfix" id="gallery">
+						<div>
+					      		<audio class="carousel-audio" src="" type="audio/ogg" id="myaudio1" controls >
+					      		</audio>
+					    </div>
+						<div class="carousel-container">
+    
+					      <div id="carousel">
+
+					        <div class="carousel-feature">
+					        	
+					          <a href="#">
+					          <img class="carousel-image" alt="Image Caption" src="images/xyzimg.jpg" onclick="playaudio('xyz.mp3')">
+					          </a>
+					          <div class="carousel-caption">
+					            <p id="caption1">
+					              Track		: Track-1 <br>
+					              Artist	: Linking park
+					              Genre 	: Rock <br>
+					              Size		: 5.3mb <br>
+					              Length 	: 5.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 </span>&#9734 &#9734 &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					        	
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/pqrimg.jpg" onclick="playaudio('pqr.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p id="caption2">
+					              Track		: Track-2 <br>
+					              Artist	: Linking park
+					              Genre 	: Jazz <br>
+					              Size		: 4.3mb <br>
+					              Length 	: 4.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734</span>&#9734 &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/abcimg.jpg" onclick="playaudio('pqr.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p id="caption3">
+					              Track		: Track-3 <br>
+					              Artist	: Linking park
+					              Genre 	: Rock <br>
+					              Size		: 6.3mb <br>
+					              Length 	: 7.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734 &#9734</span> &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/xyzimg.jpg" onclick="playaudio('xyz.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p>
+					              Track		: Track-4 <br>
+					              Artist	: Linking park
+					              Genre 	: Jazz <br>
+					              Size		: 5.8mb <br>
+					              Length 	: 6.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734 &#9734</span> &#9734
+					            </p>
+					          </div>
+					        </div>
+					      </div>
+					    
+					      <div id="carousel-left"><img src="images/backwrdarrw.png" /></div>
+					      <div id="carousel-right"><img src="images/frwdarrw.png" /></div>
+					    </div>
+					  
+					</div>
+					
+					<div class="grid-container clearfix" id="grid">
+						<div style="float:right;">
+							<div>
+								<img id="mainimg" src="" class="carousel-image" style="height:100px; width:100px; float:left; padding:15px">
+							
+								<div style="float:right; width:150px;">
+						            <p id="txt">
+						              
+						            </p>
+						    	</div>
+						    </div>
+					    </div>
+
+						<div class="col-lg-12 thumb-img" >
+							<div>
+					      		<audio class="carousel-audio" src="" type="audio/ogg" id="myaudio2" controls style="margin-left:0;">
+					      		</audio>
+					    	</div>
+					    	<div>
+								<p>
+									<a href="#"><img id="im1" class="carousel-image col-lg-2" alt="Image Caption" src="images/xyzimg.jpg" onclick="playnset('xyz.mp3',id,caption1)"></a>
+
+									<a href="#"><img id="im2" class="carousel-image col-lg-2" alt="Image Caption" src="images/pqrimg.jpg" onclick="playnset('pqr.mp3',id,caption2)"></a>
+
+									<a href="#"><img id="im3" class="carousel-image col-lg-2" alt="Image Caption" src="images/abcimg.jpg" onclick="playnset('xyz.mp3',id,caption3)"></a>
+
+									<a href="#"><img id="im4" class="carousel-image col-lg-2" alt="Image Caption" src="images/pqrimg.jpg" onclick="playnset('pqr.mp3',id,caption2)"></a>
+
+									<a href="#"><img id="im5" class="carousel-image col-lg-2" alt="Image Caption" src="images/xyzimg.jpg" onclick="playnset('xyz.mp3',id,caption1)"></a>
+
+									<a href="#"><img id="im6" class="carousel-image col-lg-2" alt="Image Caption" src="images/abcimg.jpg" onclick="playnset('xyz.mp3',id,caption3)"></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer clearfix">
+				<img src="images/footer-bdr.png">
+				<div class="footer-blank col-lg-3"></div>
+				<div class="footer-content clearfix col-lg-6">
+					<div class="mini-logo"> <img src="images/mini-logo.png" alt="Logo"></div>
+					<div class="copyright"> <span>Copyright &copy; 2012 My Website . All Rights Reserved</span> </div>
+					<div class="dock-menu clearfix">
+					 <img class="hoverImages" src="images/twitter.png" />
+				     <img class="hoverImages" src="images/facebook.png" />
+				     <img class="hoverImages" src="images/digg.png" />
+				     <img class="hoverImages" src="images/linked.png" />
+				     <img class="hoverImages" src="images/stumble.png" />
+				     <img class="hoverImages" src="images/twitter-icon.png" />
+				    </div>
+				</div>
+				<div class="footer-tabs col-lg-3">
+					<span>EULA &nbsp</span><span>&nbsp Terms of service &nbsp</span><span style="border:none;">&nbsp privacy policy</span>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

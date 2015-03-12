@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Jquery test
+	</title>
+	<link type="text/css" rel="stylesheet" href="music.css"/>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/feature-carousel.css" charset="utf-8" />
+	<script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var carousel = $("#carousel").featureCarousel({
+          // include options like this:
+          // (use quotes only for string values, and no trailing comma after last option)
+          // option: value,
+          // option: value
+        });
+
+        $("#but_prev").click(function () {
+          carousel.prev();
+        });
+        $("#but_pause").click(function () {
+          carousel.pause();
+        });
+        $("#but_start").click(function () {
+          carousel.start();
+        });
+        $("#but_next").click(function () {
+          carousel.next();
+        });
+
+        $("#grid").hide();
+		$("#list").hide();
+		// $("grid").show();
+
+		$('#gridview').click (function (){
+
+			$("#gallery").hide();
+			$("#list").hide();
+			// $("#grid").css("display","block");
+			$("#grid").show();
+								
+		});
+
+
+		$('#galleryview').click (function (){
+			
+			$("#grid").hide();
+			$("#list").hide();
+			// $("#grid").css("display","block");
+			$("#gallery").show();
+				
+		});
+
+		$('#listview').click (function (){
+			
+			$("#gallery").hide();
+			$("#grid").hide();
+			// $("#grid").css("display","block");
+			$("#list").show();
+				
+		});
+  
+      });
+
+      function playaudio (audiofile)
+        {
+        	var a=document.getElementById("myaudio1");
+        	a.pause();
+        	a.src = audiofile;
+        	a.play();	
+        };
+
+      function stop ()
+      {
+      		var a=document.getElementById("myaudio1");
+        	a.pause();
+        	a.currentTime=0;
+      }
+
+      function playnset (audiofile, id, caption)
+        {
+        	var a =document.getElementById("myaudio2");
+        	 this.id=id;
+        	console.log(id);
+        	var i = document.getElementById(id).src;
+        	document.getElementById("setimg").src=i;
+        	console.log(caption);
+        	var t = $(caption).html();
+        	$('#txt').html(t);
+        	
+        	a.pause();
+        	a.src = audiofile;
+        	a.play();	
+        };
+
+        function playaud (audiofile, currid)
+        {
+        	var a=document.getElementById("audiolist");
+        	var i=a.src;
+        	var index = i.lastIndexOf("/") + 1;
+			var filename = i.substr(index);
+			var stop= "Stop";
+			var play3 = "Play";
+			// console.log(currid);
+			// var id=currid;
+			// this.id=currid;
+        	// console.log(a.src);
+        	// console.log(filename);
+        	// console.log(audiofile);
+
+        	if(filename == audiofile)
+        	{
+	        	if(a.paused == true)
+	        	 {
+	        	 	// console.log(id);
+	        		a.play();
+	        		// var id1= currid;
+	        		// document.getElementById(currid).innerHTML="Stop";
+	        		$('#' + currid).text('Stop');
+	        		// a.start();
+
+	        	 }
+	        	 else
+	        	 {
+	        	 // alert("play aud");
+	        		a.pause();
+	        		a.currentTime=0;
+	        		// console.log(currid);
+	        		// document.getElementById(currid).innerHTML="Play";
+	        		$('#' + currid).text('Play');
+	        	 }
+	        }
+	        else
+	        {
+	        	// alert("pause aud");
+	        	// a.pause();
+	        	// var id1= currid;
+	        	$('.settext').text('Play');
+	        	// document.getElementById(currid).innerHTML="Play";
+	        	a.src=audiofile;
+	        	a.play();
+	        	 // document.getElementById(currid).innerHTML="Stop";
+	        	 $('#' + currid).text('Stop');
+	        	// console.log($('#' + currid).html('Stop'));
+	        	// currid.textContent="Stop";
+	        	// currid.text="Stop";
+	        	// currid="Stop";
+	        	// console.log(currid);
+
+	        	// console.log(currid.textContent);
+
+
+	        }
+        	// console.log(a.text);
+        };
+
+    </script>
+
+</head>
+<body>
+	<div class="main-container">
+		<div class="sub-container">
+			<!-- Header start -->
+			<div class="header clearfix">
+				<div class="logo"> <img src="images/logo.png" alt="Logo"></div>
+				<div class="name"> <img src="images/name.png" alt="Music to die for..."></div>
+				<div class="search-box"><input type="button" value=" " class="btn-icon"><input type="search" placeholder="Search..." style="border:none;"></div>
+			</div>
+			<!-- Header end -->
+
+			<!-- Menu bar start -->
+			<div class="menu-bar clearfix">
+				<ul>
+ 					<li><a href="index.html">About</a></li>
+ 					<li><a href="Pictures.html">My Pictures</a></li>
+ 					<li class="active"><a href="#">My Music</a></li>
+ 					<li><a href="Files.html">My Files</a></li>
+ 					<li><a href="Videos.html">My Videos</a></li>
+ 				</ul>
+			</div>
+			<!-- Menu bar end -->
+
+			<!-- Main body content starts here -->
+			<div class="main-body">
+				<div class="col-lg-12">
+					<div class="tabs clearfix">
+						<ul>
+		 					<li ><a href="#grid-container"  id="gridview">Grid</a></li>
+		 					<li><a href="#list-container" id="listview">List</a></li>
+		 					<li ><a href="#gallery-container"  id="galleryview">Gallery</a></li>
+		 				</ul>
+					</div>
+
+					<!-- Gallery view starts here -->
+					<div class="gallery-container clearfix" id="gallery">
+						<div>
+					      		<audio class="carousel-audio" src="" type="audio/ogg" id="myaudio1" controls >
+					      		</audio>
+					    </div>
+						<div class="carousel-container">
+    
+					      <div id="carousel">
+
+					        <div class="carousel-feature">
+					        	
+					          <a href="#">
+					          <img class="carousel-image" alt="Image Caption" src="images/xyzimg.jpg" onclick="playaudio('xyz.mp3')">
+					          </a>
+					          <div class="carousel-caption">
+					            <p id="caption1">
+					              Track		: Track-1 <br>
+					              Artist	: Linking park
+					              Genre 	: Rock <br>
+					              Size		: 5.3mb <br>
+					              Length 	: 5.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 </span>&#9734 &#9734 &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					        	
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/pqrimg.jpg" onclick="playaudio('pqr.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p id="caption2">
+					              Track		: Track-2 <br>
+					              Artist	: Linking park
+					              Genre 	: Jazz <br>
+					              Size		: 4.3mb <br>
+					              Length 	: 4.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734</span>&#9734 &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/abcimg.jpg" onclick="playaudio('pqr.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p id="caption3">
+					              Track		: Track-3 <br>
+					              Artist	: Linking park
+					              Genre 	: Rock <br>
+					              Size		: 6.3mb <br>
+					              Length 	: 7.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734 &#9734</span> &#9734
+					            </p>
+					          </div>
+					        </div>
+					        <div class="carousel-feature">
+					          <a href="#"><img class="carousel-image" alt="Image Caption" src="images/xyzimg.jpg" onclick="playaudio('xyz.mp3')"></a>
+					          <div class="carousel-caption">
+					            <p>
+					              Track		: Track-4 <br>
+					              Artist	: Linking park
+					              Genre 	: Jazz <br>
+					              Size		: 5.8mb <br>
+					              Length 	: 6.00 <br>
+					              Rating 	: <span style="color:#FFA500;">&#9734 &#9734 &#9734 &#9734</span> &#9734
+					            </p>
+					          </div>
+					        </div>
+					      </div>
+					    
+					      <div id="carousel-left" onclick="stop()"><img src="images/backwrdarrw.png" /></div>
+					      <div id="carousel-right" onclick="stop()"><img src="images/frwdarrw.png" /></div>
+					    </div>
+					  
+					</div>
+					<!-- Gallery view ends here -->
+
+					<!-- List view starts here -->
+					<div class="list-container clearfix" id="list">
+						<div class="list-content">
+							<div>
+					      		<audio class="list-audio" src="" type="audio/ogg" id="audiolist" controls >
+					      		</audio>
+					    	</div>
+							<table>
+								<tr>
+									<td>No.</td>
+									<td>Status</td>
+									<td>Song Name</td>
+									<td>Artist</td>
+									<td>Genre</td>
+									<td>Lenth</td>
+									<td>Size</td>
+									<td>Rating</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td><a href="#" onclick="playaud('xyz.mp3','a1')" id="a1" class="settext">Play<a></td>
+									<td>Track-1</td>
+									<td>Linkin Park</td>
+									<td>Rock</td>
+									<td>5.00</td>
+									<td>5.3mb</td>
+									<td><span style="color:#FFA500;">&#9734 &#9734 </span>&#9734 &#9734 &#9734</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td><a href="#" onclick="playaud('pqr.mp3',id)" id="a2" class="settext">Play<a></td>
+									<td>Track-2</td>
+									<td>Linkin Park</td>
+									<td>Jazz</td>
+									<td>4.00</td>
+									<td>4.3mb</td>
+									<td><span style="color:#FFA500;">&#9734 &#9734 &#9734</span>&#9734 &#9734</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td><a href="#" onclick="playaud('abc.mp3','a3')" id="a3" class="settext">Play<a></td>
+									<td>Track-3</td>
+									<td>Linkin Park</td>
+									<td>Rock</td>
+									<td>7.00</td>
+									<td>6.3mb</td>
+									<td><span style="color:#FFA500;">&#9734 &#9734 &#9734 &#9734</span> &#9734</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- List view ends here -->
+
+					<!-- Grid view starts here -->
+					<div class="grid-container clearfix" id="grid">
+						<div style="float:right;">
+							<div>
+								<img id="setimg" src="" class="carousel-image" style="height:100px; width:100px; float:left; padding:15px">
+							
+								<div style="float:right; width:150px;">
+						            <p id="txt">
+						              
+						            </p>
+						    	</div>
+						    </div>
+					    </div>
+
+						<div class="col-lg-12 thumb-img" >
+							<div>
+					      		<audio class="carousel-audio" src="" type="audio/ogg" id="myaudio2" controls style="margin-left:0;">
+					      		</audio>
+					    	</div>
+					    	<div>
+								<p>
+									<a href="#"><img id="im1" class="carousel-image col-lg-2" alt="Image Caption" src="images/xyzimg.jpg" onclick="playnset('xyz.mp3',id,caption1)"></a>
+
+									<a href="#"><img id="im2" class="carousel-image col-lg-2" alt="Image Caption" src="images/pqrimg.jpg" onclick="playnset('pqr.mp3',id,caption2)"></a>
+
+									<a href="#"><img id="im3" class="carousel-image col-lg-2" alt="Image Caption" src="images/abcimg.jpg" onclick="playnset('xyz.mp3',id,caption3)"></a>
+
+									<a href="#"><img id="im4" class="carousel-image col-lg-2" alt="Image Caption" src="images/pqrimg.jpg" onclick="playnset('pqr.mp3',id,caption2)"></a>
+
+									<a href="#"><img id="im5" class="carousel-image col-lg-2" alt="Image Caption" src="images/xyzimg.jpg" onclick="playnset('xyz.mp3',id,caption1)"></a>
+
+									<a href="#"><img id="im6" class="carousel-image col-lg-2" alt="Image Caption" src="images/abcimg.jpg" onclick="playnset('xyz.mp3',id,caption3)"></a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- Grid view ends here -->
+				</div>
+			</div>
+			<!-- Main content ends here -->
+
+			<!-- Footer starts here -->
+			<div class="footer clearfix">
+				<img src="images/footer-bdr.png">
+				<div class="footer-blank col-lg-3"></div>
+				<div class="footer-content clearfix col-lg-6">
+					<div class="mini-logo"> <img src="images/mini-logo.png" alt="Logo"></div>
+					<div class="copyright"> <span>Copyright &copy; 2012 My Website . All Rights Reserved</span> </div>
+					<div class="dock-menu clearfix">
+					 <img class="hoverImages" src="images/twitter.png" />
+				     <img class="hoverImages" src="images/facebook.png" />
+				     <img class="hoverImages" src="images/digg.png" />
+				     <img class="hoverImages" src="images/linked.png" />
+				     <img class="hoverImages" src="images/stumble.png" />
+				     <img class="hoverImages" src="images/twitter-icon.png" />
+				    </div>
+				</div>
+				<div class="footer-tabs col-lg-3">
+					<span>EULA &nbsp</span><span>&nbsp Terms of service &nbsp</span><span style="border:none;">&nbsp privacy policy</span>
+				</div>
+				
+			</div>
+			<!-- Footer ends -->
+
+		</div>
+	</div>
+</body>
+</html>
